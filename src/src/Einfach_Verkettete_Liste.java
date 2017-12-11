@@ -72,14 +72,10 @@ public class Einfach_Verkettete_Liste {
 	
 	public void RemoveLastElement()
 	{
-		if(isListEmpty())
-		{
-			
-		}
-		else
+		if(!isListEmpty())
 		{
 			ListElement le = startElement;
-			while(le.getNext() != null)
+			while(le.getNext().getNext() != null)
 			{
 				le = le.getNext();
 			}
@@ -146,7 +142,6 @@ public class Einfach_Verkettete_Liste {
 		evl.Einfach_Verkettete_ListeToString(evl);
 		System.out.println();
 		
-		//geat no nit
 		System.out.println("Das letzte Element der Liste entferen!");
 		evl.RemoveLastElement();
 		evl.Einfach_Verkettete_ListeToString(evl);
