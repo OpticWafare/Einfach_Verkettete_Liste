@@ -3,17 +3,16 @@ package src;
 public class ListElement {
 
 	private ListElement next;
-	private String value;
+	private int value;
 
-	
-	
+
 	public ListElement() {
 		super();
 		this.next = null;
-		this.value = "default";
+		this.value = 0;
 	}
 
-	public ListElement(String value) {
+	public ListElement(int value) {
 		super();
 		this.next = null;
 		this.value = value;
@@ -27,11 +26,11 @@ public class ListElement {
 		this.next = next;
 	}
 
-	public String getValue() {
+	public int getValue() {
 		return value;
 	}
 
-	public void setStelle(String value) {
+	public void setValue(int value) {
 		this.value = value;
 	}
 	
