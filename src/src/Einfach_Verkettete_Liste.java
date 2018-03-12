@@ -269,32 +269,16 @@ public class Einfach_Verkettete_Liste {
 		//		evl.RemoveElementFromList(2);
 		//		evl.Einfach_Verkettete_ListeToString(evl);
 
-		Einfach_Verkettete_Liste evl1 = new Einfach_Verkettete_Liste();
-		Einfach_Verkettete_Liste evl2 = new Einfach_Verkettete_Liste();
-		evl2.insertElements(10, evl2);
+//		Einfach_Verkettete_Liste evl1 = new Einfach_Verkettete_Liste();
+	//	Einfach_Verkettete_Liste evl2 = new Einfach_Verkettete_Liste();
+		//evl2.insertElements(10, evl2);
 //		evl1.Einfach_Verkettete_ListeToString(evl1);
 //		System.out.println();
 
 //		evl1.bubblesort(evl1);
 //		evl1.Einfach_Verkettete_ListeToString(evl1);
 	
-//		evl2.Einfach_Verkettete_ListeToString(evl2);
-//		evl1.startElement = new ListElement(5);
-//		evl1.insertionSort(evl1, new ListElement(8));
-//		System.out.println();
-//		evl1.insertionSort(evl1, new ListElement(7));
-//		System.out.println();
-//		evl1.insertionSort(evl1, new ListElement(9));
-//		System.out.println();
-//		evl1.insertionSort(evl1, new ListElement(4));
-//		System.out.println("sdagsdf");
-//		evl1.Einfach_Verkettete_ListeToString(evl1);
-//		System.out.println("Hallo");
-//		evl1.insertionSort(evl1, evl2.startElement);
-//		evl1.Einfach_Verkettete_ListeToString(evl1);
-		
-		
-		//System.out.println(evl1.size());
+
 		
 		Einfach_Verkettete_Liste evl3 = new Einfach_Verkettete_Liste();
 		Einfach_Verkettete_Liste evl4 = new Einfach_Verkettete_Liste();
