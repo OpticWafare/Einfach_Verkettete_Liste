@@ -6,6 +6,61 @@ public class Einfach_Verkettete_Liste {
 
 	private ListElement startElement; ;
 
+	public void insertionSort (Einfach_Verkettete_Liste evl1, ListElement le)
+	{
+		int i = 0;
+		ArrayList<ListElement> liste = new ArrayList<ListElement>();
+		
+		liste.add(le);
+		while((le.getNext()) != null)
+		{
+			liste.add(le.getNext());
+			le = le.getNext();
+		}
+		
+		if(evl1.isListEmpty())
+		{
+			System.out.println("liste was empty");
+			evl1.startElement = le;
+			le.setNext(null);
+			i = 1;
+		}
+		System.out.println("----------");
+		for(; i< liste.size(); i++)
+		{
+			System.out.println("Versuche " + liste.get(i).getValue() + " einzusortieren");
+			ListElement element2;
+			if(liste.get(i).getValue() <= evl1.startElement.getValue())
+			{
+				liste.get(i).setNext(evl1.startElement);
+				evl1.startElement = liste.get(i);
+				System.out.println("Element wird an Anfang der Liste eingeordnet, da es kleiner als das erste Element der Liste ist");
+				evl1.Einfach_Verkettete_ListeToString(evl1);
+				System.out.println();
+				continue;
+			}
+			element2 = evl1.startElement;
+			System.out.print("-"+element2.getValue());
+			while(element2 != null)
+			{
+				if((liste.get(i).getValue() >= element2.getValue() && element2.getNext() == null) 
+						||(liste.get(i).getValue() >= element2.getValue() && liste.get(i).getValue() <= element2.getNext().getValue()))
+				{
+					if(element2.getNext() == null) System.out.println("-Ende der Liste erreicht, Element wird hier eingeordnet");
+					else System.out.println("-Element ist groessergleich "+element2.getValue() + " und kleinergleich " + element2.getNext().getValue() + ", wird dazwischen eingeordnet");
+					liste.get(i).setNext(element2.getNext());
+					element2.setNext(liste.get(i));
+					System.out.println();
+					evl1.Einfach_Verkettete_ListeToString(evl1);
+					System.out.println();
+					break;
+				}
+				element2 = element2.getNext();
+				System.out.print("-"+element2.getValue());
+			}
+		}
+		System.out.println("----------");
+	}
 	
 	public void bubblesort2 (Einfach_Verkettete_Liste evl1, ListElement le)
 	{
@@ -269,9 +324,9 @@ public class Einfach_Verkettete_Liste {
 		//		evl.RemoveElementFromList(2);
 		//		evl.Einfach_Verkettete_ListeToString(evl);
 
-//		Einfach_Verkettete_Liste evl1 = new Einfach_Verkettete_Liste();
-	//	Einfach_Verkettete_Liste evl2 = new Einfach_Verkettete_Liste();
-		//evl2.insertElements(10, evl2);
+		Einfach_Verkettete_Liste evl1 = new Einfach_Verkettete_Liste();
+		Einfach_Verkettete_Liste evl2 = new Einfach_Verkettete_Liste();
+		evl2.insertElements(10, evl2);
 //		evl1.Einfach_Verkettete_ListeToString(evl1);
 //		System.out.println();
 
@@ -280,15 +335,37 @@ public class Einfach_Verkettete_Liste {
 	
 
 		
-		Einfach_Verkettete_Liste evl3 = new Einfach_Verkettete_Liste();
-		Einfach_Verkettete_Liste evl4 = new Einfach_Verkettete_Liste();
-		evl3.insertElements(10, evl3);
-		evl4.bubblesort2(evl4, new ListElement(7));
-		evl3.Einfach_Verkettete_ListeToString(evl3);
+		evl2.Einfach_Verkettete_ListeToString(evl2);
+		evl1.startElement = new ListElement(5);
+		evl1.insertionSort(evl1, new ListElement(8));
 		System.out.println();
-		evl4.bubblesort2(evl4, evl3.startElement);
+		evl1.insertionSort(evl1, new ListElement(7));
 		System.out.println();
-		evl4.Einfach_Verkettete_ListeToString(evl4);
+		evl1.insertionSort(evl1, new ListElement(9));
+		System.out.println();
+		evl1.insertionSort(evl1, new ListElement(4));
+		System.out.println("sdagsdf");
+		evl1.Einfach_Verkettete_ListeToString(evl1);
+		System.out.println("Hallo");
+		evl1.insertionSort(evl1, evl2.startElement);
+		evl1.Einfach_Verkettete_ListeToString(evl1);
+		
+		
+		//System.out.println(evl1.size());
+
+		
+		
+		
+		
+//		Einfach_Verkettete_Liste evl3 = new Einfach_Verkettete_Liste();
+//		Einfach_Verkettete_Liste evl4 = new Einfach_Verkettete_Liste();
+//		evl3.insertElements(10, evl3);
+//		evl4.bubblesort2(evl4, new ListElement(7));
+//		evl3.Einfach_Verkettete_ListeToString(evl3);
+//		System.out.println();
+//		evl4.bubblesort2(evl4, evl3.startElement);
+//		System.out.println();
+//		evl4.Einfach_Verkettete_ListeToString(evl4);
 	}
 
 
